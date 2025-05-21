@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Organick</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Yellowtail&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Team page specific styles */
+        .team-banner {
+            background-image: url('images/Team\ Banner.png');
+            background-size: cover;
+            background-position: center;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .team-banner:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .banner-title {
+            font-size: 70px;
+            color: var(--white);
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .team-section {
+            padding: 80px 0;
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-family: 'Yellowtail', cursive;
+            font-size: 36px;
+            color: var(--secondary);
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .team-card {
+            background-color: var(--light);
+            border-radius: 30px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-image {
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .team-card:hover .team-image img {
+            transform: scale(1.05);
+        }
+
+        .team-info {
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        .team-name {
+            font-size: 22px;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .team-position {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            transition: var(--transition);
+            font-size: 16px;
+        }
+
+        .social-icon:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        @media (max-width: 1100px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .mobile-menu {
+                width: 100%;
+                height: auto;
+                background-color: inherit;
+                /* display: flex; */
+                flex-direction: column;
+                padding-inline: 3vw;
+                gap: 2vw;
+            }
+
+            .mobile-menu a {
+                text-decoration: none;
+                color: var(--secondary);
+                font-size: 3vw;
+                font-weight: 500;
+            }
+
+            .search-box input {
+                width: 120px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .banner-title {
+                font-size: 48px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header/Navbar (Same as index.html) -->
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.svg" alt="Organick">
+                        <span>Organick</span>
+                    </a>
+                </div>
+
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle">
+                                Pages
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="team.html">Our Team</a></li>
+                                <li><a href="portfolio.html">Portfolio</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="style-guide.html">Style Guide</a></li>
+                                <li><a href="404.html">404 Not Found</a></li>
+                                <li><a href="protected.html">Password Protected</a></li>
+                                <li><a href="licenses.html">Licenses</a></li>
+                                <li><a href="changelog.html">Changelog</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="shop.html" class="nav-link">Shop</a></li>
+                        <li><a href="projects.html" class="nav-link">Projects</a></li>
+                        <li><a href="news.html" class="nav-link">News</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search...">
+                        <button class="search-btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+
+                    <a href="cart.html" class="cart-btn">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Cart (0)</span>
+                    </a>
+
+                    <button class="mobile-menu-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu (Same as index.html) -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li>
+                <div class="mobile-dropdown">
+                    <a href="#">Pages</a>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="style-guide.html">Style Guide</a></li>
+                    <li><a href="404.html">404 Not Found</a></li>
+                    <li><a href="protected.html">Password Protected</a></li>
+                    <li><a href="licenses.html">Licenses</a></li>
+                    <li><a href="changelog.html">Changelog</a></li>
+                </ul>
+            </li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="news.html">News</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <!-- Banner -->
+        <section class="team-banner">
+            <!-- <h1 class="banner-title">Our Team</h1> -->
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section">
+            <div class="container">
+                <p class="section-subtitle">Team</p>
+                <h2 class="section-title">Our Organic Experts</h2>
+                <p class="section-description">
+                    Simply dummy text of the printing and typesetting industry. Lorem had ceased to been the industry's
+                    standard dummy text ever since the 1500s, when an unknown printer took a galley.
+                </p>
+
+                <div class="team-grid">
+                    <!-- Team Member 1 -->
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="images/Team 1.png" alt="Giovani Bacardo">
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Giovani Bacardo</h3>
+                            <p class="team-position">Farmer</p>
+                            <div class="team-social">
+                                <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 2 -->
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="images/Team 2.png" alt="Marianne Loreno">
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Marianne Loreno</h3>
+                            <p class="team-position">Designer</p>
+                            <div class="team-social">
+                                <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 3 -->
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="images/Team 3.png" alt="Riga Pelore">
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Riga Pelore</h3>
+                            <p class="team-position">Farmer</p>
+                            <div class="team-social">
+                                <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 4 -->
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="images/Team 4.png" alt="Keira Knightley">
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Keira Knightley</h3>
+                            <p class="team-position">Farmer</p>
+                            <div class="team-social">
+                                <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 5 -->
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="images/Team 5.png" alt="Scott Lawrence">
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Scott Lawrence</h3>
+                            <p class="team-position">Designer</p>
+                            <div class="team-social">
+                                <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 6 -->
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="images/Team 6.png" alt="Karen Allen">
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Karen Allen</h3>
+                            <p class="team-position">Farmer</p>
+                            <div class="team-social">
+                                <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Banner -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <div class="newsletter-text">
+                        <h2>Subscribe to our Newsletter</h2>
+                    </div>
+                    <div class="newsletter-form">
+                        <form action="#" method="POST">
+                            <input type="email" placeholder="Your Email Address" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="footer-info">
+                        <div class="info-item">
+                            <span class="info-title">Email</span>
+                            <p>needhelp@Organick.com</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-title">Phone</span>
+                            <p>666 888 888</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-title">Address</span>
+                            <p>88 road, borklyn street, USA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-col footer-center">
+                    <div class="footer-logo">
+                        <img src="images/logo.svg" alt="Organick">
+                        <span>Organick</span>
+                    </div>
+                    <p class="footer-desc">
+                        Simply dummy text of the printing and typesetting industry. Lorem Ipsum simply dummy text of the
+                        printing
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Utility Pages</h3>
+                    <ul class="footer-links">
+                        <li><a href="style-guide.html">Style Guide</a></li>
+                        <li><a href="404.html">404 Not Found</a></li>
+                        <li><a href="protected.html">Password Protected</a></li>
+                        <li><a href="licenses.html">Licenses</a></li>
+                        <li><a href="changelog.html">Changelog</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Copyright © <span>Organick</span> | Designed by VictorFlow Templates - Powered by Webflow</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

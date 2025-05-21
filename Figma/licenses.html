@@ -1,0 +1,412 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licenses - Organick</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Yellowtail&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Licenses page specific styles */
+        .licenses-banner {
+            background-color: #F9F8F8;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .leaf-decoration {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .leaf-decoration svg {
+            position: absolute;
+            opacity: 0.5;
+        }
+        
+        .leaf-1 {
+            top: 15%;
+            left: 10%;
+        }
+        
+        .leaf-2 {
+            top: 50%;
+            left: 30%;
+        }
+        
+        .leaf-3 {
+            bottom: 20%;
+            left: 20%;
+        }
+        
+        .leaf-4 {
+            top: 20%;
+            right: 15%;
+        }
+        
+        .leaf-5 {
+            bottom: 30%;
+            right: 10%;
+        }
+        
+        .banner-title {
+            font-size: 70px;
+            color: var(--primary);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .license-section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .license-section:last-child {
+            border-bottom: none;
+        }
+        
+        .license-heading {
+            font-size: 30px;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+        
+        .license-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .license-text {
+            line-height: 1.8;
+        }
+        
+        .license-text a {
+            color: var(--secondary);
+            text-decoration: underline;
+            transition: var(--transition);
+        }
+        
+        .license-text a:hover {
+            color: var(--primary);
+        }
+        
+        .image-list {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .image-list-item {
+            margin-right: 10px;
+        }
+        
+        @media (max-width: 992px) {
+            .banner-title {
+                font-size: 48px;
+            }
+            
+            .license-heading {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navbar (Same as index.html) -->
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.svg" alt="Organick">
+                        <span>Organick</span>
+                    </a>
+                </div>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle">
+                                Pages
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="team.html">Our Team</a></li>
+                                <li><a href="portfolio.html">Portfolio</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="style-guide.html">Style Guide</a></li>
+                                <li><a href="404.html">404 Not Found</a></li>
+                                <li><a href="protected.html">Password Protected</a></li>
+                                <li><a href="licenses.html">Licenses</a></li>
+                                <li><a href="changelog.html">Changelog</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="shop.html" class="nav-link">Shop</a></li>
+                        <li><a href="projects.html" class="nav-link">Projects</a></li>
+                        <li><a href="news.html" class="nav-link">News</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search...">
+                        <button class="search-btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    
+                    <a href="cart.html" class="cart-btn">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Cart (0)</span>
+                    </a>
+                    
+                    <button class="mobile-menu-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu (Same as index.html) -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li>
+                <div class="mobile-dropdown">
+                    <a href="#">Pages</a>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="style-guide.html">Style Guide</a></li>
+                    <li><a href="404.html">404 Not Found</a></li>
+                    <li><a href="protected.html">Password Protected</a></li>
+                    <li><a href="licenses.html">Licenses</a></li>
+                    <li><a href="changelog.html">Changelog</a></li>
+                </ul>
+            </li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="news.html">News</a></li>
+        </ul>
+    </div>
+    
+    <main>
+        <!-- Banner -->
+        <section class="licenses-banner">
+            <div class="leaf-decoration">
+                <svg class="leaf-1" width="84" height="72" viewBox="0 0 84 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M38.5 32C38.5 32 43.5 18.5 64.5 12.5C85.5 6.5 83 32 83 32C83 32 83.5 53.5 64.5 59C45.5 64.5 38.5 54 38.5 54" stroke="#7EB693" stroke-width="2"/>
+                    <path d="M1 1C1 1 24.5 13.5 36 41C47.5 68.5 36 71 36 71" stroke="#7EB693" stroke-width="2"/>
+                </svg>
+                
+                <svg class="leaf-2" width="60" height="56" viewBox="0 0 60 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1C1 1 33.5 1 42.5 22.5C51.5 44 42.5 55 42.5 55" stroke="#7EB693" stroke-width="2"/>
+                    <path d="M45.5 27.5C45.5 27.5 57 27.5 57 38.5C57 49.5 45.5 49.5 45.5 49.5" stroke="#7EB693" stroke-width="2"/>
+                </svg>
+                
+                <svg class="leaf-3" width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="44" cy="44" r="43" stroke="#7EB693" stroke-width="2"/>
+                    <path d="M15 42.9C15 42.9 26.5 42.9 44 42.9C61.5 42.9 73 42.9 73 42.9" stroke="#7EB693" stroke-width="2"/>
+                    <path d="M44 15C44 15 44 26.5 44 44C44 61.5 44 73 44 73" stroke="#7EB693" stroke-width="2"/>
+                </svg>
+                
+                <svg class="leaf-4" width="83" height="72" viewBox="0 0 83 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M44.5 32C44.5 32 39.5 18.5 18.5 12.5C-2.5 6.5 0 32 0 32C0 32 -0.5 53.5 18.5 59C37.5 64.5 44.5 54 44.5 54" stroke="#7EB693" stroke-width="2"/>
+                    <path d="M82 1C82 1 58.5 13.5 47 41C35.5 68.5 47 71 47 71" stroke="#7EB693" stroke-width="2"/>
+                </svg>
+                
+                <svg class="leaf-5" width="50" height="70" viewBox="0 0 50 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 69C25 69 25 43 40 31.5C55 20 49 1 49 1" stroke="#7EB693" stroke-width="2"/>
+                    <path d="M1 45.5C1 45.5 25 35.5 32.5 46C40 56.5 25 69 25 69" stroke="#7EB693" stroke-width="2"/>
+                </svg>
+            </div>
+            
+            <div class="container">
+                <h1 class="banner-title">Licenses</h1>
+            </div>
+        </section>
+        
+        <!-- Icons & Graphics Section -->
+        <section class="license-section">
+            <div class="container">
+                <h2 class="license-heading">Icon & Graphics</h2>
+                <div class="license-content">
+                    <p class="license-text">
+                        Icons and Graphics are manually designed by the <a href="#">VictorFlow</a> Templates team. You may download these and edit them to fit your website without asking for permission or providing credit.
+                    </p>
+                    <p class="license-text">
+                        Upon purchasing Software UI Kit Template our team grants you a nonexclusive, worldwide copyright license to download, copy, modify, and use the icons.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Photography Section -->
+        <section class="license-section">
+            <div class="container">
+                <h2 class="license-heading">Photography</h2>
+                <div class="license-content">
+                    <p class="license-text">
+                        All images used in the Organick Webflow Template are licensed for free personal and commercial use. If you'd like to use any specific image, you can check the licenses and download the images for free on Unsplash, Pexels, And Freepik.
+                    </p>
+                    
+                    <h3>Unsplash</h3>
+                    <div class="image-list">
+                        <span class="image-list-item">Image 1,</span>
+                        <span class="image-list-item">Image 2,</span>
+                        <span class="image-list-item">Image 3,</span>
+                        <span class="image-list-item">Image 4,</span>
+                        <span class="image-list-item">Image 5,</span>
+                        <span class="image-list-item">Image 6,</span>
+                        <span class="image-list-item">Image 7,</span>
+                        <span class="image-list-item">Image 8,</span>
+                        <span class="image-list-item">Image 9,</span>
+                        <span class="image-list-item">Image 10,</span>
+                        <span class="image-list-item">Image 11,</span>
+                        <span class="image-list-item">Image 12,</span>
+                        <span class="image-list-item">Image 13,</span>
+                        <span class="image-list-item">Image 14,</span>
+                        <span class="image-list-item">Image 15,</span>
+                        <span class="image-list-item">Image 16,</span>
+                        <span class="image-list-item">Image 17,</span>
+                        <span class="image-list-item">Image 18,</span>
+                        <span class="image-list-item">Image 19,</span>
+                        <span class="image-list-item">Image 20,</span>
+                        <span class="image-list-item">Image 21,</span>
+                        <span class="image-list-item">Image 22,</span>
+                        <span class="image-list-item">Image 23,</span>
+                        <span class="image-list-item">Image 24,</span>
+                        <span class="image-list-item">Image 25,</span>
+                    </div>
+                    
+                    <h3>Pexel</h3>
+                    <div class="image-list">
+                        <span class="image-list-item">Image 1,</span>
+                        <span class="image-list-item">Image 2,</span>
+                        <span class="image-list-item">Image 3,</span>
+                        <span class="image-list-item">Image 4,</span>
+                        <span class="image-list-item">Image 5,</span>
+                        <span class="image-list-item">Image 6,</span>
+                        <span class="image-list-item">Image 7,</span>
+                        <span class="image-list-item">Image 8,</span>
+                        <span class="image-list-item">Image 9,</span>
+                        <span class="image-list-item">Image 10,</span>
+                        <span class="image-list-item">Image 11,</span>
+                        <span class="image-list-item">Image 12,</span>
+                        <span class="image-list-item">Image 13,</span>
+                        <span class="image-list-item">Image 14,</span>
+                        <span class="image-list-item">Image 15,</span>
+                        <span class="image-list-item">Image 16,</span>
+                        <span class="image-list-item">Image 17,</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Font Section -->
+        <section class="license-section">
+            <div class="container">
+                <h2 class="license-heading">Font</h2>
+                <div class="license-content">
+                    <p class="license-text">
+                        Organick template uses free licensed Google Fonts. Please check <a href="https://fonts.google.com/specimen/Roboto" target="_blank">Roboto</a>, <a href="https://fonts.google.com/specimen/Yellowtail" target="_blank">Yellowtail</a> and <a href="https://fonts.google.com/specimen/Open+Sans" target="_blank">Open Sans</a>.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter Banner -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <div class="newsletter-text">
+                        <h2>Subscribe to our Newsletter</h2>
+                    </div>
+                    <div class="newsletter-form">
+                        <form action="#" method="POST">
+                            <input type="email" placeholder="Your Email Address" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer (Same as index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="footer-info">
+                        <div class="info-item">
+                            <span class="info-title">Email</span>
+                            <p>needhelp@Organick.com</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-title">Phone</span>
+                            <p>666 888 888</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-title">Address</span>
+                            <p>88 road, borklyn street, USA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-col footer-center">
+                    <div class="footer-logo">
+                        <img src="images/logo.svg" alt="Organick">
+                        <span>Organick</span>
+                    </div>
+                    <p class="footer-desc">
+                        Simply dummy text of the printing and typesetting industry. Lorem Ipsum simply dummy text of the printing
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Utility Pages</h3>
+                    <ul class="footer-links">
+                        <li><a href="style-guide.html">Style Guide</a></li>
+                        <li><a href="404.html">404 Not Found</a></li>
+                        <li><a href="protected.html">Password Protected</a></li>
+                        <li><a href="licenses.html">Licenses</a></li>
+                        <li><a href="changelog.html">Changelog</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Copyright © <span>Organick</span> | Designed by VictorFlow Templates - Powered by Webflow</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,515 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Organick</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Yellowtail&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Contact page specific styles */
+        .contact-banner {
+            background-image: url('images/contact-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .contact-banner:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        .banner-title {
+            font-size: 70px;
+            color: var(--primary);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-section {
+            padding: 80px 0;
+        }
+        
+        .contact-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+        
+        .contact-image {
+            border-radius: 30px;
+            overflow: hidden;
+        }
+        
+        .contact-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .contact-text h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .contact-text p {
+            margin-bottom: 30px;
+        }
+        
+        .contact-methods {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .contact-method {
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+        
+        .method-label {
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .method-value {
+            font-size: 18px;
+            color: var(--primary);
+        }
+        
+        .social-links-contact {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .farms-section {
+            position: relative;
+            background-image: url('images/farm-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            border-radius: 30px;
+            margin-bottom: 80px;
+        }
+        
+        .farms-card {
+            background-color: var(--white);
+            border-radius: 30px;
+            padding: 50px;
+            max-width: 500px;
+            margin-left: auto;
+        }
+        
+        .location-title {
+            font-family: 'Yellowtail', cursive;
+            font-size: 36px;
+            color: var(--secondary);
+            margin-bottom: 8px;
+        }
+        
+        .farms-card h2 {
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .farm-location {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .location-icon {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            background-color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+        }
+        
+        .location-info h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        
+        .contact-form-section {
+            margin-bottom: 80px;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            font-size: 16px;
+            outline: none;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+        }
+        
+        .message-group {
+            grid-column: span 2;
+        }
+        
+        .form-group textarea {
+            height: 200px;
+            resize: none;
+        }
+        
+        .send-btn {
+            padding: 20px 40px;
+            font-size: 18px;
+        }
+        
+        @media (max-width: 992px) {
+            .contact-intro {
+                grid-template-columns: 1fr;
+            }
+            
+            .farms-card {
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .banner-title {
+                font-size: 48px;
+            }
+            
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .message-group {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navbar (Same as index.html) -->
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.svg" alt="Organick">
+                        <span>Organick</span>
+                    </a>
+                </div>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle">
+                                Pages
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="team.html">Our Team</a></li>
+                                <li><a href="portfolio.html">Portfolio</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="style-guide.html">Style Guide</a></li>
+                                <li><a href="404.html">404 Not Found</a></li>
+                                <li><a href="protected.html">Password Protected</a></li>
+                                <li><a href="licenses.html">Licenses</a></li>
+                                <li><a href="changelog.html">Changelog</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="shop.html" class="nav-link">Shop</a></li>
+                        <li><a href="projects.html" class="nav-link">Projects</a></li>
+                        <li><a href="news.html" class="nav-link">News</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search...">
+                        <button class="search-btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    
+                    <a href="cart.html" class="cart-btn">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Cart (0)</span>
+                    </a>
+                    
+                    <button class="mobile-menu-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu (Same as index.html) -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li>
+                <div class="mobile-dropdown">
+                    <a href="#">Pages</a>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="style-guide.html">Style Guide</a></li>
+                    <li><a href="404.html">404 Not Found</a></li>
+                    <li><a href="protected.html">Password Protected</a></li>
+                    <li><a href="licenses.html">Licenses</a></li>
+                    <li><a href="changelog.html">Changelog</a></li>
+                </ul>
+            </li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="news.html">News</a></li>
+        </ul>
+    </div>
+    
+    <main>
+        <!-- Banner -->
+        <section class="contact-banner">
+            <h1 class="banner-title">Contact Us</h1>
+        </section>
+        
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="container">
+                <!-- Contact Intro -->
+                <div class="contact-intro">
+                    <div class="contact-image">
+                        <img src="images/contact-image.jpg" alt="Contact Us">
+                    </div>
+                    <div class="contact-text">
+                        <h2>We'd love to talk about how we can work together.</h2>
+                        <p>
+                            Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.
+                        </p>
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <span class="method-label">Message</span>
+                                <span class="method-value">support@organick.com</span>
+                            </div>
+                            <div class="contact-method">
+                                <span class="method-label">Contact Us</span>
+                                <span class="method-value">+01 123 456 789</span>
+                            </div>
+                        </div>
+                        <div class="social-links-contact">
+                            <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fa-brands fa-pinterest-p"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Farms Section -->
+                <div class="farms-section">
+                    <div class="container">
+                        <div class="farms-card">
+                            <p class="location-title">Location</p>
+                            <h2>Our Farms</h2>
+                            <div class="farm-location">
+                                <div class="location-icon">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div class="location-info">
+                                    <h3>New York, USA</h3>
+                                    <p>299 Park Avenue New York, New York 10171</p>
+                                </div>
+                            </div>
+                            <div class="farm-location">
+                                <div class="location-icon">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div class="location-info">
+                                    <h3>London, UK</h3>
+                                    <p>30 Stamford Street, London SE1 9LQ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form Section -->
+                <div class="contact-form-section">
+                    <div class="container">
+                        <form id="contactForm">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="fullName">Full Name*</label>
+                                    <input type="text" id="fullName" placeholder="Your Full Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Your Email*</label>
+                                    <input type="email" id="email" placeholder="example@yourmail.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="company">Company*</label>
+                                    <input type="text" id="company" placeholder="Your company name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">Subject*</label>
+                                    <input type="text" id="subject" placeholder="How can we help" required>
+                                </div>
+                                <div class="form-group message-group">
+                                    <label for="message">Message*</label>
+                                    <textarea id="message" placeholder="Hello there, I would like to talk about how to..." required></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary send-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter Banner -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <div class="newsletter-text">
+                        <h2>Subscribe to our Newsletter</h2>
+                    </div>
+                    <div class="newsletter-form">
+                        <form action="#" method="POST">
+                            <input type="email" placeholder="Your Email Address" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer (Same as index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="footer-info">
+                        <div class="info-item">
+                            <span class="info-title">Email</span>
+                            <p>needhelp@Organick.com</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-title">Phone</span>
+                            <p>666 888 888</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-title">Address</span>
+                            <p>88 road, borklyn street, USA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-col footer-center">
+                    <div class="footer-logo">
+                        <img src="images/logo.svg" alt="Organick">
+                        <span>Organick</span>
+                    </div>
+                    <p class="footer-desc">
+                        Simply dummy text of the printing and typesetting industry. Lorem Ipsum simply dummy text of the printing
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Utility Pages</h3>
+                    <ul class="footer-links">
+                        <li><a href="style-guide.html">Style Guide</a></li>
+                        <li><a href="404.html">404 Not Found</a></li>
+                        <li><a href="protected.html">Password Protected</a></li>
+                        <li><a href="licenses.html">Licenses</a></li>
+                        <li><a href="changelog.html">Changelog</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Copyright © <span>Organick</span> | Designed by VictorFlow Templates - Powered by Webflow</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/script.js"></script>
+    <script>
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const company = document.getElementById('company').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real application, you would send this data to a server
+            // For now, we'll just show a success message
+            alert(`Thank you, ${name}! Your message has been sent successfully. We'll get back to you soon.`);
+            
+            // Reset the form
+            this.reset();
+        });
+    </script>
+</body>
+</html>

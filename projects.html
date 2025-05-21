@@ -1,0 +1,526 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Organick</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Yellowtail&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Projects page specific styles */
+        .projects-banner {
+            background-image: url("./images/hei-p.png");
+            background-size: cover;
+            background-position: center;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .projects-banner:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        
+        .banner-title {
+            font-size: 70px;
+            color: var(--white);
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        .initiatives-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            font-family: 'Yellowtail', cursive;
+            font-size: 36px;
+            color: var(--secondary);
+            margin-bottom: 8px;
+        }
+        
+        .section-title {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .section-description {
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 16px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--secondary);
+        }
+        
+        .filter-btn.outlined {
+            background-color: transparent;
+            color: var(--primary);
+            border: 1px solid var(--border-color);
+        }
+        
+        .filter-btn.outlined:hover, .filter-btn.outlined.active {
+            background-color: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .project-card {
+            background-color: var(--white);
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .project-image {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+        
+        .project-content {
+            padding: 30px;
+        }
+        
+        .project-date {
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+        
+        .project-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .project-description {
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+        
+        .project-results {
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+        
+        .result-title {
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .status-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            z-index: 1;
+        }
+        
+        .project-idea {
+            background-color: var(--light);
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 60px;
+            border-radius: 30px;
+        }
+        
+        .project-idea-title {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .project-idea-description {
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        @media (max-width: 992px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .banner-title {
+                font-size: 48px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .project-content {
+                padding: 20px;
+            }
+            
+            .project-title {
+                font-size: 20px;
+            }
+            
+            .project-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navbar (Same as index.html) -->
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.svg" alt="Organick">
+                        <span>Organick</span>
+                    </a>
+                </div>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle">
+                                Pages
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="team.html">Our Team</a></li>
+                                <li><a href="portfolio.html">Portfolio</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="style-guide.html">Style Guide</a></li>
+                                <li><a href="404.html">404 Not Found</a></li>
+                                <li><a href="protected.html">Password Protected</a></li>
+                                <li><a href="licenses.html">Licenses</a></li>
+                                <li><a href="changelog.html">Changelog</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="shop.html" class="nav-link">Shop</a></li>
+                        <li><a href="projects.html" class="nav-link">Projects</a></li>
+                        <li><a href="news.html" class="nav-link">News</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search...">
+                        <button class="search-btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    
+                    <a href="cart.html" class="cart-btn">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Cart (0)</span>
+                    </a>
+                    
+                    <button class="mobile-menu-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu (Same as index.html) -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li>
+                <div class="mobile-dropdown">
+                    <a href="#">Pages</a>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="style-guide.html">Style Guide</a></li>
+                    <li><a href="404.html">404 Not Found</a></li>
+                    <li><a href="protected.html">Password Protected</a></li>
+                    <li><a href="licenses.html">Licenses</a></li>
+                    <li><a href="changelog.html">Changelog</a></li>
+                </ul>
+            </li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="news.html">News</a></li>
+        </ul>
+    </div>
+    
+    <main>
+        <!-- Banner -->
+        <section class="projects-banner">
+            <!-- <h1 class="banner-title">Our Projects</h1> -->
+        </section>
+        
+        <!-- Initiatives Section -->
+        <section class="initiatives-section">
+            <div class="container">
+                <p class="section-subtitle">Projects</p>
+                <h2 class="section-title">Our Initiatives</h2>
+                <p class="section-description">
+                    Discover the projects we're working on to promote sustainable farming, organic food accessibility, and environmental conservation.
+                </p>
+                
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn outlined" data-filter="completed">Completed</button>
+                    <button class="filter-btn outlined" data-filter="ongoing">Ongoing</button>
+                    <button class="filter-btn outlined" data-filter="planning">Planning</button>
+                </div>
+                
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card" data-category="completed">
+                        <div class="project-image">
+                            <span class="status-tag">Completed</span>
+                            <img src="images/organic.webp" alt="Farm-to-Table Initiative">
+                        </div>
+                        <div class="project-content">
+                            <p class="project-date">January 2023</p>
+                            <h3 class="project-title">Farm-to-Table Initiative</h3>
+                            <p class="project-description">
+                                Connecting local organic farmers directly with restaurants to reduce food miles and increase freshness.
+                            </p>
+                            <div class="project-results">
+                                <p class="result-title">Results:</p>
+                                <p>Reduced supply chain by 60% and increased farmer profits by 25%.</p>
+                            </div>
+                            <a href="#" class="btn-secondary">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card" data-category="ongoing">
+                        <div class="project-image">
+                            <span class="status-tag">Ongoing</span>
+                            <img src="images/garden.jpg" alt="Organic School Gardens">
+                        </div>
+                        <div class="project-content">
+                            <p class="project-date">March 2023</p>
+                            <h3 class="project-title">Organic School Gardens</h3>
+                            <p class="project-description">
+                                Installing organic vegetable gardens in schools to teach children about food production and healthy eating.
+                            </p>
+                            <div class="project-results">
+                                <p class="result-title">Results:</p>
+                                <p>Implemented in 15 schools, reaching over 3,000 students.</p>
+                            </div>
+                            <a href="#" class="btn-secondary">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="project-card" data-category="ongoing">
+                        <div class="project-image">
+                            <span class="status-tag">Ongoing</span>
+                            <img src="images/future.png" alt="Sustainable Packaging Research">
+                        </div>
+                        <div class="project-content">
+                            <p class="project-date">June 2023</p>
+                            <h3 class="project-title">Sustainable Packaging Research</h3>
+                            <p class="project-description">
+                                Researching and developing biodegradable packaging solutions for our organic product line.
+                            </p>
+                            <div class="project-results">
+                                <p class="result-title">Results:</p>
+                                <p>Reduced plastic use by 40% and testing new compostable materials.</p>
+                            </div>
+                            <a href="#" class="btn-secondary">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4 -->
+                    <div class="project-card" data-category="planning">
+                        <div class="project-image">
+                            <span class="status-tag">Planning</span>
+                            <img src="images/water.jpg" alt="Water Conservation Program">
+                        </div>
+                        <div class="project-content">
+                            <p class="project-date">August 2023</p>
+                            <h3 class="project-title">Water Conservation Program</h3>
+                            <p class="project-description">
+                                Developing efficient irrigation systems for organic farms to minimize water usage while maintaining crop health.
+                            </p>
+                            <div class="project-results">
+                                <p class="result-title">Results:</p>
+                                <p>Pilot program ready to launch in 5 partner farms next month.</p>
+                            </div>
+                            <a href="#" class="btn-secondary">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project Idea Section -->
+                <div class="project-idea">
+                    <div class="container">
+                        <h2 class="project-idea-title">Have a Project Idea?</h2>
+                        <p class="project-idea-description">
+                            We're always looking for new ways to promote organic agriculture and sustainable practices. If you have a project idea or want to collaborate, we'd love to hear from you.
+                        </p>
+                        <a href="#" class="btn btn-primary">Propose a Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter Banner -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <div class="newsletter-text">
+                        <h2>Subscribe to our Newsletter</h2>
+                    </div>
+                    <div class="newsletter-form">
+                        <form action="#" method="POST">
+                            <input type="email" placeholder="Your Email Address" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer (Same as index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="footer-info">
+                        <div class="info-item">
+                            <span class="info-title">Email</span>
+                            <p>needhelp@Organick.com</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-title">Phone</span>
+                            <p>666 888 888</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-title">Address</span>
+                            <p>88 road, borklyn street, USA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-col footer-center">
+                    <div class="footer-logo">
+                        <img src="images/logo.svg" alt="Organick">
+                        <span>Organick</span>
+                    </div>
+                    <p class="footer-desc">
+                        Simply dummy text of the printing and typesetting industry. Lorem Ipsum simply dummy text of the printing
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Utility Pages</h3>
+                    <ul class="footer-links">
+                        <li><a href="style-guide.html">Style Guide</a></li>
+                        <li><a href="404.html">404 Not Found</a></li>
+                        <li><a href="protected.html">Password Protected</a></li>
+                        <li><a href="licenses.html">Licenses</a></li>
+                        <li><a href="changelog.html">Changelog</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Copyright © <span>Organick</span> | Designed by VictorFlow Templates - Powered by Webflow</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/script.js"></script>
+    <script>
+        // Project filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Show/hide projects based on filter
+                    projectCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

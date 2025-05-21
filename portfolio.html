@@ -1,0 +1,343 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Organick</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Yellowtail&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Portfolio page specific styles */
+        .portfolio-banner {
+            background-image: url('images/Portfoilo\ Banner.png');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .banner-title {
+            font-size: 70px;
+            color: var(--primary);
+            position: relative;
+            text-align: center;
+        }
+        
+        .portfolio-section {
+            padding: 80px 0;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .portfolio-item {
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .portfolio-image {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-image img {
+            transform: scale(1.05);
+        }
+        
+        .portfolio-info {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        .portfolio-title {
+            color: var(--primary);
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        
+        .portfolio-category {
+            color: var(--secondary);
+            font-style: italic;
+        }
+        
+        @media (max-width: 1100px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .banner-title {
+                font-size: 48px;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navbar (Same as index.html) -->
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.svg" alt="Organick">
+                        <span>Organick</span>
+                    </a>
+                </div>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle">
+                                Pages
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="team.html">Our Team</a></li>
+                                <li><a href="portfolio.html">Portfolio</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="style-guide.html">Style Guide</a></li>
+                                <li><a href="404.html">404 Not Found</a></li>
+                                <li><a href="protected.html">Password Protected</a></li>
+                                <li><a href="licenses.html">Licenses</a></li>
+                                <li><a href="changelog.html">Changelog</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="shop.html" class="nav-link">Shop</a></li>
+                        <li><a href="projects.html" class="nav-link">Projects</a></li>
+                        <li><a href="news.html" class="nav-link">News</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search...">
+                        <button class="search-btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    
+                    <a href="cart.html" class="cart-btn">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Cart (0)</span>
+                    </a>
+                    
+                    <button class="mobile-menu-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu (Same as index.html) -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li>
+                <div class="mobile-dropdown">
+                    <a href="#">Pages</a>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="style-guide.html">Style Guide</a></li>
+                    <li><a href="404.html">404 Not Found</a></li>
+                    <li><a href="protected.html">Password Protected</a></li>
+                    <li><a href="licenses.html">Licenses</a></li>
+                    <li><a href="changelog.html">Changelog</a></li>
+                </ul>
+            </li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="news.html">News</a></li>
+        </ul>
+    </div>
+    
+    <main>
+        <!-- Banner -->
+        <section class="portfolio-banner">
+            <!-- <h1 class="banner-title">Portfolio Standard</h1> -->
+        </section>
+        
+        <!-- Portfolio Section -->
+        <section class="portfolio-section">
+            <div class="container">
+                <div class="portfolio-grid">
+                    <!-- Portfolio Item 1 -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="images/Portfoilo 1.png" alt="Green & Tasty Lemon">
+                        </div>
+                        <div class="portfolio-info">
+                            <h3 class="portfolio-title">Green & Tasty Lemon</h3>
+                            <p class="portfolio-category">Fruits</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Portfolio Item 2 -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="images/Portfoilo 2.png" alt="Organic Carrot">
+                        </div>
+                        <div class="portfolio-info">
+                            <h3 class="portfolio-title">Organic Carrot</h3>
+                            <p class="portfolio-category">Farmer</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Portfolio Item 3 -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="images/Portfoilo 3.png" alt="Organic Betel Leaf">
+                        </div>
+                        <div class="portfolio-info">
+                            <h3 class="portfolio-title">Organic Betel Leaf</h3>
+                            <p class="portfolio-category">Leaf</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Portfolio Item 4 -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="images/Portfoilo 4.png" alt="Natural Tommato">
+                        </div>
+                        <div class="portfolio-info">
+                            <h3 class="portfolio-title">Natural Tommato</h3>
+                            <p class="portfolio-category">Fruits</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Portfolio Item 5 -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="images/Portfoilo 5.png" alt="Black Raspberry">
+                        </div>
+                        <div class="portfolio-info">
+                            <h3 class="portfolio-title">Black Raspberry</h3>
+                            <p class="portfolio-category">Farmer</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Portfolio Item 6 -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="images/Portfoilo 6.png" alt="Honey Orange">
+                        </div>
+                        <div class="portfolio-info">
+                            <h3 class="portfolio-title">Honey Orange</h3>
+                            <p class="portfolio-category">Farmer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter Banner -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <div class="newsletter-text">
+                        <h2>Subscribe to our Newsletter</h2>
+                    </div>
+                    <div class="newsletter-form">
+                        <form action="#" method="POST">
+                            <input type="email" placeholder="Your Email Address" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer (Same as index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="footer-info">
+                        <div class="info-item">
+                            <span class="info-title">Email</span>
+                            <p>needhelp@Organick.com</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-title">Phone</span>
+                            <p>666 888 888</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-title">Address</span>
+                            <p>88 road, borklyn street, USA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-col footer-center">
+                    <div class="footer-logo">
+                        <img src="images/logo.svg" alt="Organick">
+                        <span>Organick</span>
+                    </div>
+                    <p class="footer-desc">
+                        Simply dummy text of the printing and typesetting industry. Lorem Ipsum simply dummy text of the printing
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Utility Pages</h3>
+                    <ul class="footer-links">
+                        <li><a href="style-guide.html">Style Guide</a></li>
+                        <li><a href="404.html">404 Not Found</a></li>
+                        <li><a href="protected.html">Password Protected</a></li>
+                        <li><a href="licenses.html">Licenses</a></li>
+                        <li><a href="changelog.html">Changelog</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Copyright © <span>Organick</span> | Designed by VictorFlow Templates - Powered by Webflow</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

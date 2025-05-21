@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Protected - Organick</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Yellowtail&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #274C5B;
+            --secondary: #7EB693;
+            --white: #fff;
+            --text-color: #525C60;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.5;
+        }
+
+        /* .container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 15px;
+        } */
+
+        /* Header Styles */
+        /* .header {
+            padding: 20px 0;
+            background: var(--white);
+        } */
+
+        /* .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .logo img {
+            height: 40px;
+        } */
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            padding: 20px 0;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: relative;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .logo span {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-list {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-link {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--secondary);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .dropdown-toggle i {
+            font-size: 12px;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--white);
+            border-radius: 8px;
+            min-width: 200px;
+            padding: 10px 0;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            z-index: 100;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 8px 20px;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .dropdown-menu a:hover {
+            background-color: var(--light);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            border-radius: 36px;
+            padding: 5px 5px 5px 15px;
+            background-color: var(--light);
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            width: 150px;
+            font-size: 14px;
+        }
+
+        .search-btn {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .cart-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--light);
+            padding: 5px 20px 5px 10px;
+            border-radius: 36px;
+            color: var(--primary);
+        }
+
+        .cart-btn i {
+            font-size: 18px;
+        }
+
+        /* .mobile-menu-btn {
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: #274C5B;
+            cursor: pointer;
+            padding: 0 0 0 4px;
+        } */
+
+        /* Mobile Menu */
+        /* .mobile-menu {
+            display: none;
+            background-color: var(--white);
+            padding: 20px;
+            position: absolute;
+            width: 100%;
+            top: 90px;
+            left: 0;
+            z-index: 90;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-nav-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .mobile-dropdown {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .mobile-dropdown-menu {
+            display: none;
+            padding: 10px 0 10px 20px;
+            margin-top: 10px;
+        }
+
+        .mobile-dropdown-menu.active {
+            display: block;
+        } */
+
+        /* Protected Page Styles */
+        .protected-section {
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .protected-title {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .protected-title::before,
+        .protected-title::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-image: url('images/leaf-decoration.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .protected-title::before {
+            left: -60px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .protected-title::after {
+            right: -60px;
+            top: 50%;
+            transform: translateY(-50%) scaleX(-1);
+        }
+
+        .protected-form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 40px;
+            background: var(--white);
+            border-radius: 30px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .form-image {
+            width: 120px;
+            height: 120px;
+            background: #F9F8F4;
+            border-radius: 20px;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .form-image img {
+            width: 60%;
+            height: auto;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        .form-label {
+            display: block;
+            text-align: left;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #E0E0E0;
+            border-radius: 16px;
+            font-size: 16px;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 20px 40px;
+            border-radius: 16px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .submit-btn:hover {
+            background: var(--secondary);
+        }
+
+        /* Newsletter Section */
+        .newsletter-section {
+            padding: 80px 0;
+            background: url('images/newsletter-bg.jpg') center/cover;
+            border-radius: 30px;
+            margin: 0 15px;
+        }
+
+        .newsletter-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .newsletter-text h2 {
+            color: var(--white);
+            font-size: 32px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .newsletter-form input {
+            padding: 20px;
+            border: none;
+            border-radius: 16px;
+            min-width: 300px;
+        }
+
+        .newsletter-form button {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 20px 40px;
+            border-radius: 16px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        /* Footer Styles */
+        .footer {
+            padding: 80px 0 20px;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col h3 {
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+
+        .footer-info .info-item {
+            margin-bottom: 20px;
+        }
+
+        .info-title {
+            color: var(--primary);
+            font-weight: 700;
+            display: block;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #E0E0E0;
+        }
+
+        @media (max-width: 768px) {
+            .protected-title {
+                font-size: 32px;
+            }
+
+            .newsletter-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form input {
+                min-width: auto;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        /* Add these new styles for messages and loading */
+        .message {
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: none;
+        }
+
+        .message.error {
+            background: #ffe5e5;
+            color: #ff4444;
+            border: 1px solid #ffcccc;
+        }
+
+        .message.success {
+            background: #e8f5e9;
+            color: #4caf50;
+            border: 1px solid #c8e6c9;
+        }
+
+        .submit-btn.loading {
+            position: relative;
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+        .submit-btn.loading:after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 0.8s linear infinite;
+            position: absolute;
+            right: 15px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        @media (max-width: 992px) {
+
+            .nav,
+            .nav-list,
+            .header-actions,
+            .search-box {
+                display: none !important;
+            }
+
+            .mobile-actions {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                margin-left: auto;
+            }
+
+            .cart-btn-mobile {
+                background: #F4F4F4;
+                border-radius: 50px;
+                padding: 8px 16px;
+                display: flex;
+                align-items: center;
+                color: #274C5B;
+                font-size: 22px;
+                transition: background 0.2s;
+                border: none;
+                outline: none;
+            }
+
+            .cart-btn-mobile:hover {
+                background: #e0e0e0;
+            }
+
+            /* .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+            } */
+
+            .mobile-menu-btn2 {
+                background: none;
+                border: none;
+                font-size: 28px;
+                color: #274C5B;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                padding: 0 0 0 4px;
+            }
+
+            .mobile-menu2 {
+                display: block;
+                background-color: var(--white);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY(-20px);
+                transition: opacity 0.35s cubic-bezier(.4, 0, .2, 1), transform 0.35s cubic-bezier(.4, 0, .2, 1);
+            }
+
+            .mobile-menu2.open {
+                opacity: 1;
+                pointer-events: auto;
+                transform: translateY(0);
+            }
+
+            .mobile-nav-list2 {
+                list-style: none;
+                padding: 20px;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .mobile-nav-list2 a {
+                color: var(--primary);
+                font-size: 18px;
+                padding: 10px 0;
+                display: block;
+                border-radius: 8px;
+                transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            }
+
+            .mobile-nav-list2 a:hover {
+                background: #f4f4f4;
+                color: var(--secondary);
+                box-shadow: 0 2px 8px rgba(39, 76, 91, 0.07);
+            }
+
+            .mobile-dropdown2 {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                cursor: pointer;
+                user-select: none;
+                padding: 10px 0;
+            }
+
+            .mobile-dropdown-menu2 {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding-left: 20px;
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                transition: max-height 0.35s cubic-bezier(.4, 0, .2, 1), opacity 0.35s cubic-bezier(.4, 0, .2, 1);
+            }
+
+            .mobile-dropdown-menu2.active {
+                max-height: 500px;
+                opacity: 1;
+            }
+
+            /* .mobile-dropdown {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                cursor: pointer;
+                user-select: none;
+                padding: 10px 0;
+            } */
+
+            .mobile-dropdown2:hover span,
+            .mobile-dropdown2:focus span {
+                color: var(--secondary);
+            }
+        }
+
+        @media (min-width: 993px) {
+
+            .mobile-actions,
+            .mobile-menu2 {
+                display: none !important;
+            }
+        }
+
+        /* .mobile-menu {
+            display: none;
+            background-color: var(--white);
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+
+        .mobile-menu.open {
+            display: block;
+        }
+
+        .mobile-nav-list {
+            list-style: none;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .mobile-nav-list a {
+            color: var(--primary);
+            font-size: 18px;
+            padding: 10px 0;
+            display: block;
+        }
+
+        .mobile-dropdown {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .mobile-dropdown-menu {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            padding-left: 20px;
+        }
+
+        .mobile-dropdown-menu.active {
+            display: flex;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- Header/Navbar -->
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.svg" alt="Organick">
+                        <span>Organick</span>
+                    </a>
+                </div>
+
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link active">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle">
+                                Pages
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="team.html">Our Team</a></li>
+                                <li><a href="portfolio.html">Portfolio</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="style-guide.html">Style Guide</a></li>
+                                <li><a href="404.html">404 Not Found</a></li>
+                                <li><a href="protected.html">Password Protected</a></li>
+                                <li><a href="licenses.html">Licenses</a></li>
+                                <li><a href="changelog.html">Changelog</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="shop.html" class="nav-link">Shop</a></li>
+                        <li><a href="projects.html" class="nav-link">Projects</a></li>
+                        <li><a href="news.html" class="nav-link">News</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search...">
+                        <button class="search-btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    <a href="cart.html" class="cart-btn">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Cart (0)</span>
+                    </a>
+                </div>
+                <div class="mobile-actions">
+                    <a href="cart.html" class="cart-btn-mobile">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <!-- <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-list">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li>
+                <div class="mobile-dropdown" id="mobileDropdown">
+                    <span>Pages</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <ul class="mobile-dropdown-menu" id="mobileDropdownMenu">
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="style-guide.html">Style Guide</a></li>
+                    <li><a href="404.html">404 Not Found</a></li>
+                    <li><a href="protected.html">Password Protected</a></li>
+                    <li><a href="licenses.html">Licenses</a></li>
+                    <li><a href="changelog.html">Changelog</a></li>
+                </ul>
+            </li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="news.html">News</a></li>
+        </ul>
+    </div> -->
+
+
+    <div class="mobile-menu2" id="mobileMenu2">
+        <ul class="mobile-nav-list2">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li>
+                <div class="mobile-dropdown2" id="mobileDropdown2">
+                    <span>Pages</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <ul class="mobile-dropdown-menu2" id="mobileDropdownMenu2">
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="style-guide.html">Style Guide</a></li>
+                    <li><a href="404.html">404 Not Found</a></li>
+                    <li><a href="protected.html">Password Protected</a></li>
+                    <li><a href="licenses.html">Licenses</a></li>
+                    <li><a href="changelog.html">Changelog</a></li>
+                </ul>
+            </li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="news.html">News</a></li>
+        </ul>
+    </div>
+    <main>
+        <!-- Protected Section -->
+        <section class="protected-section">
+            <div class="container">
+                <h1 class="protected-title">Protected Page</h1>
+
+                <div class="protected-form">
+                    <div class="form-image">
+                        <img src="images/leaf-decoration.svg" alt="Decoration">
+                    </div>
+
+                    <form id="passwordForm" onsubmit="return checkPassword(event)">
+                        <div id="errorMessage" class="message error"></div>
+                        <div id="successMessage" class="message success"></div>
+                        <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-input" id="password" placeholder="Enter Your Password"
+                                required>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Send Now</span> <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <div class="newsletter-text">
+                        <h2>Subscribe to our Newsletter</h2>
+                    </div>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Your Email Address" required>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="footer-info">
+                        <div class="info-item">
+                            <span class="info-title">Email</span>
+                            <p>needhelp@Organick.com</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-title">Phone</span>
+                            <p>666 888 888</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-title">Address</span>
+                            <p>88 road, borklyn street, USA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-col footer-center">
+                    <div class="footer-logo">
+                        <img src="images/logo.svg" alt="Organick">
+                        <span>Organick</span>
+                    </div>
+                    <p class="footer-desc">
+                        Simply dummy text of the printing and typesetting industry. Lorem Ipsum simply dummy text of the
+                        printing
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Utility Pages</h3>
+                    <ul class="footer-links" style="list-style: none;">
+                        <li><a href="style-guide.html" style="color: var(--text-color); text-decoration: none;">Style
+                                Guide</a></li>
+                        <li><a href="404.html" style="color: var(--text-color); text-decoration: none;">404 Not
+                                Found</a></li>
+                        <li><a href="protected.html" style="color: var(--text-color); text-decoration: none;">Password
+                                Protected</a></li>
+                        <li><a href="licenses.html"
+                                style="color: var(--text-color); text-decoration: none;">Licenses</a></li>
+                        <li><a href="changelog.html"
+                                style="color: var(--text-color); text-decoration: none;">Changelog</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Copyright © <span>Organick</span> | Designed by VictorFlow Templates - Powered by Webflow</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        async function checkPassword(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('passwordForm');
+            const submitBtn = form.querySelector('.submit-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const errorMsg = document.getElementById('errorMessage');
+            const successMsg = document.getElementById('successMessage');
+            const password = document.getElementById('password').value;
+
+            // Reset messages
+            errorMsg.style.display = 'none';
+            successMsg.style.display = 'none';
+
+            // Add loading state
+            submitBtn.classList.add('loading');
+            btnText.textContent = 'Checking...';
+
+            try {
+                // Simulate API call with delay
+                await new Promise(resolve => setTimeout(resolve, 1000));
+
+                // Demo password is "demo123"
+                // In a real application, this should be done server-side
+                if (password === 'demo123') {
+                    successMsg.textContent = 'Access granted! Redirecting...';
+                    successMsg.style.display = 'block';
+
+                    // Simulate redirect delay
+                    setTimeout(() => {
+                        // Here you would redirect to the protected content
+                        // window.location.href = 'protected-content.html';
+                        alert('In a real application, you would be redirected to the protected content.');
+                    }, 1500);
+                } else {
+                    errorMsg.textContent = 'Incorrect password. Please try again.';
+                    errorMsg.style.display = 'block';
+                    document.getElementById('password').value = '';
+                }
+            } catch (error) {
+                errorMsg.textContent = 'An error occurred. Please try again.';
+                errorMsg.style.display = 'block';
+            } finally {
+                // Remove loading state
+                submitBtn.classList.remove('loading');
+                btnText.textContent = 'Send Now';
+            }
+        }
+
+        // Newsletter form submission
+        document.querySelector('.newsletter-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            alert('Thank you for subscribing! We will send updates to: ' + email);
+            this.reset();
+        });
+
+        // Hamburger menu functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileDropdown = document.getElementById('mobileDropdown');
+            const mobileDropdownMenu = document.getElementById('mobileDropdownMenu');
+            if (mobileMenuBtn && mobileMenu && mobileDropdown && mobileDropdownMenu) {
+                mobileMenuBtn.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('open');
+                });
+                mobileDropdown.addEventListener('click', function () {
+                    mobileDropdownMenu.classList.toggle('active');
+                });
+                // Optional: close menu when clicking a link
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.remove('open');
+                    });
+                });
+            }
+        });
+
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuBtn2 = document.getElementById('mobileMenuBtn2');
+            const mobileMenu2 = document.getElementById('mobileMenu2');
+            const mobileDropdown2 = document.getElementById('mobileDropdown2');
+            const mobileDropdownMenu2 = document.getElementById('mobileDropdownMenu2');
+            const body = document.body;
+
+            // Open/close mobile menu
+            function openMenu() {
+                mobileMenu2.classList.add('open');
+                body.style.overflow = 'hidden';
+            }
+            function closeMenu() {
+                mobileMenu2.classList.remove('open');
+                body.style.overflow = '';
+                // Also close dropdown
+                mobileDropdownMenu2.classList.remove('active');
+            }
+
+            if (mobileMenuBtn2 && mobileMenu2) {
+                mobileMenuBtn2.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    if (mobileMenu2.classList.contains('open')) {
+                        closeMenu();
+                    } else {
+                        openMenu();
+                    }
+                });
+            }
+
+            // Toggle dropdown
+            if (mobileDropdown2 && mobileDropdownMenu2) {
+                mobileDropdown2.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    mobileDropdownMenu2.classList.toggle('active');
+                });
+                // Keyboard accessibility for dropdown
+                mobileDropdown2.setAttribute('tabindex', '0');
+                mobileDropdown2.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        mobileDropdownMenu2.classList.toggle('active');
+                    }
+                });
+            }
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function (e) {
+                if (mobileMenu2.classList.contains('open') && !mobileMenu2.contains(e.target) && e.target !== mobileMenuBtn2) {
+                    closeMenu();
+                }
+            });
+
+            // Close menu on ESC key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && mobileMenu2.classList.contains('open')) {
+                    closeMenu();
+                }
+            });
+
+            // Close menu when clicking a link
+            if (mobileMenu2) {
+                mobileMenu2.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        closeMenu();
+                    });
+                });
+            }
+        });
+        
+    </script>
+</body>
+
+</html>

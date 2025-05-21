@@ -1,0 +1,35 @@
+Logo and Hero Section:
+logo: https://i.ibb.co/Ld2FVFf/logo.png
+hero-bg: https://i.ibb.co/0jZ3Q8Y/hero-bg.jpg
+
+Featured Cards:
+natural-card-bg: https://i.ibb.co/n8Bk0Vt/natural-card-bg.jpg
+offer-card-bg: https://i.ibb.co/2v5hnXk/offer-card-bg.jpg
+
+About Us Section:
+about-fruits: https://i.ibb.co/VvD7LrK/about-fruits.jpg
+vegan-icon: https://i.ibb.co/C6BtfGx/vegan-icon.png
+quality-icon: https://i.ibb.co/YQBc4Kx/quality-icon.png
+organic-food-icon: https://i.ibb.co/Lx8vF1h/organic-food-icon.png
+mail-icon: https://i.ibb.co/Jk8FWtY/mail-icon.png
+
+Products Section:
+broccoli: https://i.ibb.co/QkGZLhY/broccoli.png
+banana: https://i.ibb.co/VwmyWNk/banana.png
+nuts: https://i.ibb.co/VDtk8t2/nuts.png
+tomato: https://i.ibb.co/Kz8jv7Y/tomato.png
+beans: https://i.ibb.co/qCKxHZk/beans.png
+hazelnut: https://i.ibb.co/YWFzNhk/hazelnut.png
+eggs: https://i.ibb.co/0MKXhwM/eggs.png
+bread: https://i.ibb.co/VqzPMrv/bread.png
+
+Testimonial Section:
+testimonial-bg: https://i.ibb.co/Kj8tYN4/testimonial-bg.jpg
+customer: https://i.ibb.co/VxBd0KV/customer.jpg
+
+Blog Section:
+blog1: https://i.ibb.co/LCsKXFc/blog1.jpg
+blog2: https://i.ibb.co/TwYP9wQ/blog2.jpg
+
+Newsletter Section:
+newsletter-bg: https://i.ibb.co/LpVwnXj/newsletter-bg.jpg 

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Organick</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Yellowtail&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* About page specific styles */
+        .banner {
+            background-image: url('your-image-url.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 100px 0;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .banner:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        .banner-title {
+            font-size: 70px;
+            color: var(--primary);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .why-choose-us {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .choose-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .choose-image img {
+            border-radius: 30px;
+        }
+        
+        .choose-features {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .choose-feature {
+            background-color: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        
+        .choose-feature-icon {
+            margin-bottom: 20px;
+        }
+        
+        .choose-feature-icon img {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .team-section {
+            padding: 80px 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .team-card {
+            background-color: var(--light);
+            border-radius: 30px;
+            overflow: hidden;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .team-image {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .team-info {
+            padding: 30px;
+        }
+        
+        .team-name {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        
+        .team-position {
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .team-social-link {
+            width: 34px;
+            height: 34px;
+            background-color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .team-social-link:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        @media (max-width: 992px) {
+
+            
+
+            .banner {
+                height: 300px;
+            }
+
+
+            .banner-title {
+                font-size: 48px;
+            }
+
+
+            .choose-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .banner-title {
+                font-size: 48px;
+            }
+            
+            .choose-features {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navbar (Same as index.html) -->
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="./images/Logo (1).png" alt="Organick">
+                        <span>Organick</span>
+                    </a>
+                </div>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle">
+                                Pages
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="team.html">Our Team</a></li>
+                                <li><a href="portfolio.html">Portfolio</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="style-guide.html">Style Guide</a></li>
+                                <li><a href="404.html">404 Not Found</a></li>
+                                <li><a href="protected.html">Password Protected</a></li>
+                                <li><a href="licenses.html">Licenses</a></li>
+                                <li><a href="changelog.html">Changelog</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="shop.html" class="nav-link">Shop</a></li>
+                        <li><a href="projects.html" class="nav-link">Projects</a></li>
+                        <li><a href="news.html" class="nav-link">News</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search...">
+                        <button class="search-btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    
+                    <a href="cart.html" class="cart-btn">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Cart (0)</span>
+                    </a>
+                    
+                    <button class="mobile-menu-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu (Same as index.html) -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li>
+                <div class="mobile-dropdown">
+                    <a href="#">Pages</a>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="style-guide.html">Style Guide</a></li>
+                    <li><a href="404.html">404 Not Found</a></li>
+                    <li><a href="protected.html">Password Protected</a></li>
+                    <li><a href="licenses.html">Licenses</a></li>
+                    <li><a href="changelog.html">Changelog</a></li>
+                </ul>
+            </li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="news.html">News</a></li>
+        </ul>
+    </div>
+    
+    <main>
+        <!-- Banner -->
+        <section class="banner" style="background-image: url('./images/Banner\ \(1\).png'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 100px 0; height: 450px; display: flex; align-items: center; justify-content: center; position: relative;">
+            <!-- <h1 class="banner-title">About Us</h1> -->
+        </section>
+        
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="./images/Image (7).png" alt="About Organick">
+                    </div>
+                    <div class="about-text">
+                        <p class="section-subtitle">About Us</p>
+                        <h2 class="section-title">We do Creative Things for Success</h2>
+                        <p class="about-description">
+                            Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        </p>
+                        <p class="about-description">
+                            Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.
+                        </p>
+                        <div class="about-features">
+                            <div class="about-feature">
+                                <div class="feature-icon">
+                                    <img src="images/icon-agriculture.svg" alt="Modern Agriculture">
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Modern Agriculture Equipment</h4>
+                                </div>
+                            </div>
+                            <div class="about-feature">
+                                <div class="feature-icon">
+                                    <img src="images/icon-products.svg" alt="No growth hormones">
+                                </div>
+                                <div class="feature-content">
+                                    <h4>No growth hormones are used</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-primary">Explore More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Why Choose Us Section -->
+        <section class="why-choose-us">
+            <div class="container">
+                <p class="section-subtitle text-center">Why Choose Us?</p>
+                <h2 class="section-title text-center">We do not buy from the open market & traders.</h2>
+                <p class="text-center" style="max-width: 800px; margin: 0 auto 40px;">
+                    Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.
+                </p>
+                
+                <div class="choose-content">
+                    <div class="choose-image">
+                        <img src="images/Image (8).png" alt="Why Choose Us">
+                    </div>
+                    <div class="choose-features-container">
+                        <div class="choose-features">
+                            <div class="choose-feature">
+                                <div class="choose-feature-icon">
+                                    <img src="images/icon-return.svg" alt="Return Policy">
+                                </div>
+                                <h3>Return Policy</h3>
+                                <p>Simply dummy text of the printintypesetting industry.</p>
+                            </div>
+                            <div class="choose-feature">
+                                <div class="choose-feature-icon">
+                                    <img src="images/icon-fresh.svg" alt="100% Fresh">
+                                </div>
+                                <h3>100% Fresh</h3>
+                                <p>Simply dummy text of the printintypesetting industry.</p>
+                            </div>
+                        </div>
+                        <div class="choose-features">
+                            <div class="choose-feature">
+                                <div class="choose-feature-icon">
+                                    <img src="images/icon-support.svg" alt="Support 24/7">
+                                </div>
+                                <h3>Support 24/7</h3>
+                                <p>Simply dummy text of the printintypesetting industry.</p>
+                            </div>
+                            <div class="choose-feature">
+                                <div class="choose-feature-icon">
+                                    <img src="images/icon-payment.svg" alt="Secured Payment">
+                                </div>
+                                <h3>Secured Payment</h3>
+                                <p>Simply dummy text of the printintypesetting industry.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Team Section -->
+        <section class="team-section">
+            <div class="container">
+                <p class="section-subtitle text-center">Team</p>
+                <h2 class="section-title text-center">Our Organic Experts</h2>
+                <p class="text-center" style="max-width: 800px; margin: 0 auto 40px;">
+                    Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.
+                </p>
+                
+                <div class="team-grid">
+                    <!-- Team Member 1 -->
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="images/Image (9).png" alt="Giovani Bacardo">
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Giovani Bacardo</h3>
+                            <p class="team-position">Farmer</p>
+                            <div class="team-social">
+                                <a href="#" class="team-social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class="team-social-link"><i class="fa-brands fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 2 -->
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="images/Image (10).png" alt="Marianne Loreno">
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Marianne Loreno</h3>
+                            <p class="team-position">Designer</p>
+                            <div class="team-social">
+                                <a href="#" class="team-social-link"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#" class="team-social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class="team-social-link"><i class="fa-brands fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 3 -->
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="images/Image (11).png" alt="Riga Pelore">
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Riga Pelore</h3>
+                            <p class="team-position">Farmer</p>
+                            <div class="team-social">
+                                <a href="#" class="team-social-link"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#" class="team-social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class="team-social-link"><i class="fa-brands fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter Banner -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <div class="newsletter-text">
+                        <h2>Subscribe to our Newsletter</h2>
+                    </div>
+                    <div class="newsletter-form">
+                        <form action="#" method="POST">
+                            <input type="email" placeholder="Your Email Address" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer (Same as index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="footer-info">
+                        <div class="info-item">
+                            <span class="info-title">Email</span>
+                            <p>needhelp@Organick.com</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-title">Phone</span>
+                            <p>666 888 888</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-title">Address</span>
+                            <p>88 road, borklyn street, USA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-col footer-center">
+                    <div class="footer-logo">
+                        <img src="images/logo.svg" alt="Organick">
+                        <span>Organick</span>
+                    </div>
+                    <p class="footer-desc">
+                        Simply dummy text of the printing and typesetting industry. Lorem Ipsum simply dummy text of the printing
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Utility Pages</h3>
+                    <ul class="footer-links">
+                        <li><a href="style-guide.html">Style Guide</a></li>
+                        <li><a href="404.html">404 Not Found</a></li>
+                        <li><a href="protected.html">Password Protected</a></li>
+                        <li><a href="licenses.html">Licenses</a></li>
+                        <li><a href="changelog.html">Changelog</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Copyright © <span>Organick</span> | Designed by VictorFlow Templates - Powered by Webflow</p>
+            </div>
+        </div>
+    </footer>
+    
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

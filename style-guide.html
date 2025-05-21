@@ -1,0 +1,507 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Guide - Organick</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Yellowtail&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Style Guide page specific styles */
+        .style-banner {
+            background-color: #F9F8F8;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .banner-title {
+            font-size: 70px;
+            color: var(--primary);
+        }
+        
+        .style-section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .style-section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-label {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        
+        .colors-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .color-box {
+            height: 100px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .color-info {
+            text-align: center;
+            font-size: 14px;
+            color: var(--primary);
+        }
+        
+        .primary-color { background-color: #274C5B; }
+        .secondary-color { background-color: #7EB693; }
+        .accent-color { background-color: #EFD372; }
+        .light-color { background-color: #F9F8F8; }
+        .pure-white { background-color: #FFFFFF; border: 1px solid #ECECEC; }
+        .light-gray { background-color: #EFEFDF; }
+        .dark-gray { background-color: #525C60; }
+        
+        .typography-examples h1 {
+            font-size: 70px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .typography-examples h2 {
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .typography-examples h3 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .typography-examples h4 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .typography-examples h5 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .typography-examples h6 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .paragraph-example {
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+        
+        .list-example {
+            margin-left: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .list-example li {
+            margin-bottom: 10px;
+        }
+        
+        .quote-example {
+            background-color: #F9F8F8;
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            font-style: italic;
+            color: var(--primary);
+            text-align: center;
+            max-width: 800px;
+        }
+        
+        .buttons-example {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .btn-example {
+            padding: 16px 30px;
+            border-radius: 16px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .btn-example.primary {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+        }
+        
+        .btn-example.secondary {
+            background-color: var(--accent);
+            color: var(--primary);
+            border: none;
+        }
+        
+        .btn-example.outlined {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-example.subscription {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 24px;
+        }
+        
+        @media (max-width: 992px) {
+            .colors-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .banner-title {
+                font-size: 48px;
+            }
+            
+            .typography-examples h1 {
+                font-size: 48px;
+            }
+            
+            .typography-examples h2 {
+                font-size: 36px;
+            }
+            
+            .typography-examples h3 {
+                font-size: 30px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .colors-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .buttons-example {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navbar (Same as index.html) -->
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.svg" alt="Organick">
+                        <span>Organick</span>
+                    </a>
+                </div>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle">
+                                Pages
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="team.html">Our Team</a></li>
+                                <li><a href="portfolio.html">Portfolio</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="style-guide.html">Style Guide</a></li>
+                                <li><a href="404.html">404 Not Found</a></li>
+                                <li><a href="protected.html">Password Protected</a></li>
+                                <li><a href="licenses.html">Licenses</a></li>
+                                <li><a href="changelog.html">Changelog</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="shop.html" class="nav-link">Shop</a></li>
+                        <li><a href="projects.html" class="nav-link">Projects</a></li>
+                        <li><a href="news.html" class="nav-link">News</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search...">
+                        <button class="search-btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    
+                    <a href="cart.html" class="cart-btn">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Cart (0)</span>
+                    </a>
+                    
+                    <button class="mobile-menu-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu (Same as index.html) -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li>
+                <div class="mobile-dropdown">
+                    <a href="#">Pages</a>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="style-guide.html">Style Guide</a></li>
+                    <li><a href="404.html">404 Not Found</a></li>
+                    <li><a href="protected.html">Password Protected</a></li>
+                    <li><a href="licenses.html">Licenses</a></li>
+                    <li><a href="changelog.html">Changelog</a></li>
+                </ul>
+            </li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="news.html">News</a></li>
+        </ul>
+    </div>
+    
+    <main>
+        <!-- Banner -->
+        <section class="style-banner">
+            <div class="container">
+                <h1 class="banner-title">Style Guide</h1>
+            </div>
+        </section>
+        
+        <!-- Color Section -->
+        <section class="style-section">
+            <div class="container">
+                <h2 class="section-label">Color</h2>
+                
+                <div class="colors-grid">
+                    <!-- Color 1 -->
+                    <div>
+                        <div class="color-box primary-color"></div>
+                        <div class="color-info">#274C5B</div>
+                    </div>
+                    
+                    <!-- Color 2 -->
+                    <div>
+                        <div class="color-box secondary-color"></div>
+                        <div class="color-info">#7EB693</div>
+                    </div>
+                    
+                    <!-- Color 3 -->
+                    <div>
+                        <div class="color-box accent-color"></div>
+                        <div class="color-info">#EFD372</div>
+                    </div>
+                    
+                    <!-- Color 4 -->
+                    <div>
+                        <div class="color-box light-color"></div>
+                        <div class="color-info">#F9F8F8</div>
+                    </div>
+                    
+                    <!-- Color 5 -->
+                    <div>
+                        <div class="color-box pure-white"></div>
+                        <div class="color-info">#FFFFFF</div>
+                    </div>
+                    
+                    <!-- Color 6 -->
+                    <div>
+                        <div class="color-box light-gray"></div>
+                        <div class="color-info">#EFEFDF</div>
+                    </div>
+                    
+                    <!-- Color 7 -->
+                    <div>
+                        <div class="color-box dark-gray"></div>
+                        <div class="color-info">#525C60</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Typography Section -->
+        <section class="style-section">
+            <div class="container">
+                <h2 class="section-label">Text Styles</h2>
+                
+                <div class="typography-examples">
+                    <h1>Display H1 Text</h1>
+                    <h2>Heading H2 Text</h2>
+                    <h3>Heading H3 Text</h3>
+                    <h4>Heading H4 Text</h4>
+                    <h5>Heading H5 Text</h5>
+                    <h6>Heading H6 Text</h6>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Paragraph Section -->
+        <section class="style-section">
+            <div class="container">
+                <h2 class="section-label">Paragraph</h2>
+                
+                <div class="paragraph-example">
+                    <p>
+                        Simply dummy text of the printing and typesetting industry. Lorem had ceased to been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley. It has survived not only five centuries, but also the leap into electronic typesetting, remaining unchanged. It was popularized in the 1960s with the release of Letraset sheets containing Lorem passages.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- List Section -->
+        <section class="style-section">
+            <div class="container">
+                <h2 class="section-label">List</h2>
+                
+                <ol class="list-example">
+                    <li>Publishing packages and web page editors publish default dummy text.</li>
+                    <li>Lorem ipsum appears in adipisicing elit, sed do lorem consectetur.</li>
+                    <li>Package inserts in the fashion of lorem dolor sit amet.</li>
+                </ol>
+            </div>
+        </section>
+        
+        <!-- Quote Section -->
+        <section class="style-section">
+            <div class="container">
+                <h2 class="section-label">Quotes</h2>
+                
+                <div class="quote-example">
+                    <p>
+                        "The first rule of any organic used in a business is that nature applied to an efficient operation will magnify the efficiency. The second is that organic applied to an inefficient operation will magnify the inefficiency."
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Button Section -->
+        <section class="style-section">
+            <div class="container">
+                <h2 class="section-label">Button</h2>
+                
+                <div class="buttons-example">
+                    <button class="btn-example primary">
+                        Default Button <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    
+                    <button class="btn-example secondary">
+                        Default Button <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    
+                    <button class="btn-example outlined">
+                        Default Button <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <div class="buttons-example">
+                    <button class="btn-example subscription">
+                        Subscription Button
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter Banner -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <div class="newsletter-text">
+                        <h2>Subscribe to our Newsletter</h2>
+                    </div>
+                    <div class="newsletter-form">
+                        <form action="#" method="POST">
+                            <input type="email" placeholder="Your Email Address" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer (Same as index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="footer-info">
+                        <div class="info-item">
+                            <span class="info-title">Email</span>
+                            <p>needhelp@Organick.com</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-title">Phone</span>
+                            <p>666 888 888</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-title">Address</span>
+                            <p>88 road, borklyn street, USA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-col footer-center">
+                    <div class="footer-logo">
+                        <img src="images/logo.svg" alt="Organick">
+                        <span>Organick</span>
+                    </div>
+                    <p class="footer-desc">
+                        Simply dummy text of the printing and typesetting industry. Lorem Ipsum simply dummy text of the printing
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Utility Pages</h3>
+                    <ul class="footer-links">
+                        <li><a href="style-guide.html">Style Guide</a></li>
+                        <li><a href="404.html">404 Not Found</a></li>
+                        <li><a href="protected.html">Password Protected</a></li>
+                        <li><a href="licenses.html">Licenses</a></li>
+                        <li><a href="changelog.html">Changelog</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Copyright © <span>Organick</span> | Designed by VictorFlow Templates - Powered by Webflow</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
