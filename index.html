@@ -57,7 +57,6 @@
     }
 
     body {
-        font-family: 'Roboto', sans-serif;
         line-height: 1.6;
         color: var(--text-color);
         background-color: var(--white);
@@ -306,7 +305,8 @@
 
     /* Mobile Menu */
     .mobile-menu {
-        /* display: none; */
+        display: none;
+        background: none;
         background-color: var(--white);
         padding: 20px;
         position: absolute;
@@ -315,30 +315,40 @@
         left: 0;
         z-index: 90;
         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        font-size: 18px ! important ;
+        font-family: poppins;
     }
 
-    /* .mobile-nav-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+    .mobile-nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
 
-.mobile-dropdown {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-}
+    .mobile-dropdown {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        /* gap: 8px; */
+    }
 
-.mobile-dropdown-menu {
-    display: none;
-    padding: 10px 0 10px 20px;
-    margin-top: 10px;
-}
+    /* .fa-solid fa-chevron-down
+    {
+        font-size: 5px;
+    } */
+    
 
-.mobile-dropdown-menu.active {
-    display: block;
-} */
+    .mobile-dropdown-menu {
+        display: none;
+        padding: 10px 0 10px 20px;
+        margin-top: 10px;
+    }
+
+    .mobile-dropdown-menu.active {
+        display: block;
+    }
 
     /* Hero Section */
     .hero {
@@ -821,11 +831,32 @@
             background-color: inherit;
             display: flex;
             flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
             padding-inline: 3vw;
             gap: 2vw;
         }
 
         .mobile-menu a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-size: 3vw;
+            font-weight: 500;
+        }
+
+        .mobile-dropdown-menu {
+            width: 100%;
+            height: auto;
+            background-color: inherit;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            padding-inline: 3vw;
+            gap: 2vw;
+        }
+
+        .mobile-dropdown-menu a {
             text-decoration: none;
             color: var(--secondary);
             font-size: 3vw;
@@ -998,7 +1029,7 @@
                     </a>
 
                     <button class="mobile-menu-btn">
-                        <i class="fa-solid fa-bars"></i>
+                        <i class="fa-solid fa-bars" id="hello"></i>
                     </button>
                 </div>
             </div>
@@ -1011,9 +1042,9 @@
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li>
-                <div class="mobile-dropdown">
+                <div class="mobile-dropdown" style="font-size: 18px; font-family: poppins;">
                     <a href="#">Pages</a>
-                    <i class="fa-solid fa-chevron-down"></i>
+                    <i class="fa-solid fa-chevron-down" id="hi" style="font-size: 18px; font-family: poppins;"></i>
                 </div>
                 <ul class="mobile-dropdown-menu">
                     <li><a href="team.html">Our Team</a></li>
@@ -1565,8 +1596,15 @@
 <script>
     $(document).ready(function () {
         $(".mobile-menu").hide()
-        $(".fa-solid fa-bars").click(function () {
+        $("#hello").click(function () {
             $(".mobile-menu").slideToggle(500)
+        });
+    });
+
+    $(document).ready(function () {
+        $(".mobile-dropdown-menu").hide()
+        $("#hi").click(function () {
+            $(".mobile-dropdown-menu").slideToggle(500)
         });
     });
 </script>
